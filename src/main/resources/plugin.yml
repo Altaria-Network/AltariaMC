@@ -1,20 +1,17 @@
-name: DyrtCraftXP
-version: Alpha 1.1.6 - SNAPSHOT BUILD 01
-website: http://dyrtcraft.pl/
+name: AltariaMC
+version: Unknown
+website: https://github.com/Altaria-Network/AltariaMC
 author: TheMolkaPL
+loadbefore: [WorldEdit]
 database: true
-description: Plugin stworzony specjalnie dla DyrtCraft Network!
+description: Plugin stworzony specjalnie dla Altaria Network!
 
-main: pl.DyrtCraft.DyrtCraftXP.DyrtCraftXP
+main: pl.dyrtcraft.xp.DyrtCraftXP
 
 commands:
     dcxp:
-        description: Komendy DyrtCraftXP
-        usage: /dcxp <inv|portals|reload|servers|version>
+        description: Komendy Altaria
+        usage: /dcxp <inv|portals|reload|version>
     lobby:
-        description: Polacz sie z serwerem Lobby
-        aliases: [hub]
-        usage: /lobby [-ALL|gracz]
-    xp:
-        description: Pokaz ilosc XP gracza
-        usage: /xp [gracz] [[create]del|give|set <liczba>]
+        description: Wróc na serwer Lobby Altaria Network
+        usage: /lobby [gracz|-ALL]
