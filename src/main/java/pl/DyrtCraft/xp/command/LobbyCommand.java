@@ -22,7 +22,7 @@ public class LobbyCommand implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if(command.getName().equalsIgnoreCase("lobby") || command.getName().equalsIgnoreCase("hub")) {
+		if(command.getName().equalsIgnoreCase("lobby")) {
 			// Liczba argumentow - 0
 			if(args.length == 0) {
 				// Jezeli wyslano z konsoli
@@ -69,7 +69,7 @@ public class LobbyCommand implements CommandExecutor {
 				}
 			// Liczba argumentow nie zostala spelniona
 			} else {
-				sender.sendMessage(ChatColor.RED + "Zbyt duzo argumentów!");
+				sender.sendMessage(ChatColor.RED + "Zbyt duzo argumentï¿½w!");
 				sender.sendMessage(ChatColor.RED + "Uzycie: /lobby [-ALL|gracz]");
 				return true;
 			}

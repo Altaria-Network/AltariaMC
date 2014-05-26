@@ -38,6 +38,16 @@ public class BungeeInventoryListeners implements Listener {
 				DyrtCraft.getMember(p).connect(Server.SURVIVAL);
 				return;
 			}
+			else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD + "" + ChatColor.BOLD + "RPG")) {
+				p.closeInventory();
+				DyrtCraft.getMember(p).connect(Server.RPG);
+				return;
+			}
+			else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD + "" + ChatColor.BOLD + "Serwer Testowy")) {
+				p.closeInventory();
+				DyrtCraft.getMember(p).connect(Server.TEST);
+				return;
+			}
 			else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD + "" + "Serwer Lobby")) {
 				p.closeInventory();
 				DyrtCraft.getMember(p).connect(Server.LOBBY);

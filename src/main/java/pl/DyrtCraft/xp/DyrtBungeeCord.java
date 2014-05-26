@@ -44,6 +44,8 @@ public class DyrtBungeeCord implements BungeeCord {
 		case "sb": return Server.SKYBLOCK;
 		case "fb": return Server.FREEBUILD;
 		case "sv": return Server.SURVIVAL;
+		case "rpg": return Server.RPG;
+		case "test": return Server.TEST;
 		default: return Server.UNKNOWN;
 		}
 	}
@@ -60,6 +62,8 @@ public class DyrtBungeeCord implements BungeeCord {
 		case SKYBLOCK: return "sb";
 		case FREEBUILD: return "fb";
 		case SURVIVAL: return "sv";
+		case RPG: return "rpg";
+		case TEST: return "test";
 		default: return server.toString().toLowerCase();
 		}
 	}
@@ -82,6 +86,8 @@ public class DyrtBungeeCord implements BungeeCord {
 		case SKYBLOCK: return "SkyBlock";
 		case FREEBUILD: return "FreeBuild";
 		case SURVIVAL: return "Survival";
+		case RPG: return "RPG";
+		case TEST: return "Serwer Testowy";
 		default: return "Unknown";
 		}
 	}

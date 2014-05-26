@@ -19,7 +19,7 @@ public class BungeeInventory {
 	
 	private Inventory inv;
 	//private ItemStack hc, ac, mz, sb,	lobby, esc, about, book1, book2, book3, shop;
-	private ItemStack fb, lobby, sb, sv, esc, book;
+	private ItemStack fb, lobby, sb, sv, rpg, test, esc, book;
 	
 	public BungeeInventory(Player player) {
 		inv = Bukkit.createInventory(player, 18, ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "Altaria" + ChatColor.RESET + ChatColor.DARK_GRAY + " Wybierz serwer");
@@ -30,18 +30,24 @@ public class BungeeInventory {
 		fb = createServer(Server.FREEBUILD);
 		sb = createServer(Server.SKYBLOCK);
 		sv = createServer(Server.SURVIVAL);
+		rpg = createServer(Server.RPG);
+		test = createServer(Server.TEST);
 		
 		lobby = createLobby();
 		esc = createEscape();
 		book = createInfoBook(InfoBookType.TEAMSPEAK3);
 		
 		inv.setItem(0, fb);
-		inv.setItem(1, sb);
-		//inv.setItem(2, sv);
+		inv.setItem(1, rpg);
+		inv.setItem(2, sb);
+		inv.setItem(3, sv);
 		
 		inv.setItem(7, lobby);
 		inv.setItem(8, esc);
 		inv.setItem(13, book);
+		
+		if(player.isOp() || player.hasPermission("altaria.testowy"))
+			inv.setItem(17, test);
 	}
 	
 	public Inventory getInventory() {
@@ -61,7 +67,7 @@ public class BungeeInventory {
 		ItemStack i = new ItemStack(Material.WRITTEN_BOOK, 1);
 		ItemMeta iMeta = i.getItemMeta();
 		iMeta.setDisplayName(ChatColor.GOLD + "" + ChatColor.ITALIC + "TeamSpeak 3");
-		iMeta.setLore(Arrays.asList(ChatColor.GRAY + "ts.altariamc.eu"));
+		iMeta.setLore(Arrays.asList(ChatColor.GRAY + "altariamc.eu"));
 		i.setItemMeta(iMeta);
 		return i;
 	}
@@ -81,11 +87,17 @@ public class BungeeInventory {
 		if(server == Server.FREEBUILD) {
 			name = "FreeBuild"; description = "Wejdz i zobacz jak wyglada FreeBuild"; entity = EntityType.VILLAGER;
 		}
-		if(server == Server.SKYBLOCK) {
+		else if(server == Server.SKYBLOCK) {
 			name = "SkyBlock"; description = "Czas na SkyBlock w chmurach!"; entity = EntityType.SHEEP;
 		}
-		if(server == Server.SURVIVAL) {
-			name = "Survival"; description = "W budowie ;D"; entity = EntityType.SQUID;
+		else if(server == Server.SURVIVAL) {
+			name = "Survival"; description = "Nietypowy survival z gildiami"; entity = EntityType.BLAZE;
+		}
+		else if(server == Server.RPG) {
+			name = "RPG"; description = "Najlepszy RPG w Polsce"; entity = EntityType.PIG;
+		}
+		else if(server == Server.TEST) {
+			name = "Serwer Testowy"; description = "Serwer testowy"; entity = EntityType.SQUID;
 		}
 		
 		ItemStack i = new SpawnEgg(entity).toItemStack(1);

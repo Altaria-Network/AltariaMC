@@ -75,7 +75,7 @@ public class DcxpCommand implements CommandExecutor {
 					return erPortalsArg(sender);
 				}
 			} else {
-				return erArg(sender, "Zbyt duzo argumentów!");
+				return erArg(sender, "Zbyt duzo argumentï¿½w!");
 			}
 		}
 		return false;
@@ -114,7 +114,7 @@ public class DcxpCommand implements CommandExecutor {
 			return true;
 		}
 		Player player = (Player) sender;
-		player.sendMessage(ChatColor.GRAY + "Otwieranie okna z wyborem serwerów...");
+		player.sendMessage(ChatColor.GRAY + "Otwieranie okna z wyborem serwerÃ³w...");
 		player.openInventory(DyrtCraft.getProxy().getServerChooserInventory(player));
 		return true;
 	}
